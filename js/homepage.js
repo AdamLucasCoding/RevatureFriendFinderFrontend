@@ -81,11 +81,11 @@ async function getUserByUsername(){
         console.log(json_data);
 
         let userTemplate = {
-            userId: json_data.userId,
-            userName: json_data.userName,
-            hometown: json_data.hometown,
+            userid: json_data.userid,
             username: json_data.username,
-            password: json_data.password
+            password: json_data.password,
+            email: json_data.email,
+            
         };
         console.log(userTemplate);
 
