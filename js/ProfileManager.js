@@ -1,6 +1,6 @@
 // In AJAX, you send a request using the XMLHttpRequest object,
 // which is built into JS
-const form = document.getElementById("register");
+const form = document.getElementById("editUser");
 console.log(form);
 form.addEventListener('submit', (event) => {
   // stop form submission
@@ -10,7 +10,7 @@ form.addEventListener('submit', (event) => {
   let id = form.elements[0].value;
   let username = form.elements[1].value;
   let pw = form.elements[2].value;
-  let email = form.elements[3].value;
+  
 
   //Now we can start AJAX request
   //STEP 1
@@ -23,7 +23,6 @@ form.addEventListener('submit', (event) => {
     userId: id,
     username: username,
     password: pw,
-    email: email
   };
   console.log(tempUser);
 
@@ -36,7 +35,7 @@ form.addEventListener('submit', (event) => {
       sessionStorage.setItem('message', xhr.responseText);
       
       //redirect user to the success page
-      window.location.replace("registration success.html");
+      window.location.replace("edit success.html");
     }else if(this.readyState ===4 && xhr.status ===204) {
         console.log("Failed. Status Code: " + xhr.status)
         var reason = {
@@ -61,7 +60,7 @@ form.addEventListener('submit', (event) => {
 
 
   //open the request
-  xhr.open("POST", 'http://localhost:9001/api/user/register', true);
+  xhr.open("POST", 'http://localhost:9001/api/user/editUser', true);
 
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
