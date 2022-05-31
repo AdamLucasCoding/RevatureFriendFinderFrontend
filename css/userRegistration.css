@@ -24,8 +24,8 @@ html, body{
     border: 5px dashed #95e277;
     border-radius: 5px;
     padding: 5px 10px;
-    animation: zoom; /* referring directly to the animation's @keyframe declaration */
-    animation-duration: 10s; /* don't forget to set a duration! */
+    animation: zoom; 
+    animation-duration: 10s; 
 }
 
 .img-container{
