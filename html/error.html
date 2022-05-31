@@ -20,11 +20,11 @@
         body {
             background: rgb(255, 255, 255);
             /* Old browsers */
-            background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(232, 89, 67, 1) 80%, rgba(211, 14, 0, 1) 100%);
+            background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgb(232, 207, 67) 80%, rgb(207, 211, 0) 100%);
             /* FF3.6-15 */
-            background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(232, 89, 67, 1) 80%, rgba(211, 14, 0, 1) 100%);
+            background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgb(232, 207, 67) 80%, rgb(179, 211, 0) 100%);
             /* Chrome10-25,Safari5.1-6 */
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(232, 89, 67, 1) 80%, rgba(211, 14, 0, 1) 100%);
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgb(232, 207, 67) 80%, rgb(211, 197, 0) 100%);
             /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -41,7 +41,7 @@
         
         .fas {
             display: block;
-            color: #d82111;
+            color: #d5d811;
             font-size: 200px;
             text-shadow: 5px 5px 2px rgba(51, 48, 48, 0.75);
             width: 40%;
@@ -68,7 +68,7 @@
         }
         
         #go-back-btn:hover {
-            background-color: #d82111;
+            background-color: #d8d511;
             color: white;
             text-decoration: underline;
         }
@@ -80,8 +80,6 @@
 <div id="container">
     <i class="fas fa-exclamation-triangle"></i>
     <h1 id="status-code">ERROR</h1>
-    <p id="message">text</p>
-    <p id="reason">more text</p>
 </div>
 <br>
 <button id="go-back-btn">GO BACK</button>
@@ -90,16 +88,10 @@
     var code = document.getElementById('status-code');
     var message = document.getElementById('message');
     var cause = document.getElementById('reason');
-    //clear any previous content
-    // code.innerHTML = "";
-    // message.innerHTML = "";
-    // cause.innerHTML = "";
-    //convert response json data into javascript object
+
 	let errorString = sessionStorage.getItem('failMessage');
 	console.log(errorString)
-	// if (errorString === null) {
-	// 	window.location = "http://127.0.0.1:5500/index.html";
-	// } 
+	
     if (errorString !== null){
 		let requestMessage = JSON.parse(errorString);
 		console.log(requestMessage);
