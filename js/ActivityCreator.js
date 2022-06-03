@@ -1,26 +1,35 @@
-
-const form = document.getElementById("users");
+const form = document.getElementById("activity_register");
 console.log(form);
 form.addEventListener('submit', (event) => {
   
   event.preventDefault();
  
-  let id = form.elements[0].value;
-  let username = form.elements[1].value;
-  let pw = form.elements[2].value;
-  let email = form.elements[3].value;
+  let a_id = form.elements[0].value;
+  let name = form.elements[1].value;
+  let type = form.elements[2].value;
+  let location = form.elements[3].value;
+  let created_date = form.elements[4].value;
+  let activity_date = form.elements[5].value;
+  let created_by = form.elements[6].value;
+  let occupancy_max = form.elements[7].value;
+
 
  
   let xhr = new XMLHttpRequest();
 
  
-  let tempUser = {
-    userId: u_id,
-    username: username,
-    password: pword,
-    email: email
+  let tempActivity = {
+    ActivityId: a_id,
+    ActivityName: name,
+    ActivityType: type,
+    ActivityLocation: location,
+    CreatedDate: created_date,
+    ActivityDate: activity_date,
+    UserIdThatCreated: created_by,
+    Occupancy: occupancy_max
+    
   };
-  console.log(tempUser);
+  console.log(tempActivity);
 
   
     xhr.onreadystatechange = function() {
@@ -36,7 +45,7 @@ form.addEventListener('submit', (event) => {
         console.log("Failed. Status Code: " + xhr.status)
         var reason = {
             code : xhr.status,
-            issue : 'Failed to log in. Incorrect Username or Password.'
+            issue : 'Failed to log in. Incorrect info entered.'
         };
         console.log(reason);
         sessionStorage.setItem('failMessage', JSON.stringify(reason));
@@ -56,11 +65,11 @@ form.addEventListener('submit', (event) => {
 
 
   //open the request
-  xhr.open("POST", 'http://localhost:9001/api/user/register', true);
+  xhr.open("POST", 'http://localhost:9001/api/user/register', true); //this needs edited to work right - jose
 
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
   console.log(xhr);
   
-  xhr.send(JSON.stringify(tempUser));
+  xhr.send(JSON.stringify(tempActivity));
 });
