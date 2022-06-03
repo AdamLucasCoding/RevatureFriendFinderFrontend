@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RevatureFriendFinder API | Profile Manager</title>
+    <title>RevatureFriendFinder API | Activity Manager</title>
     <link rel="stylesheet" href="../css/userRegistration.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -15,19 +15,29 @@
 <body>
     <div>
         <div class="title-bar container-fluid text-white text-center bg-dark">
-            <h1 class="title pb-2">Welcome to the Profile Manger</h1>
+            <h1 class="title pb-2">Welcome to the Activity Manger</h1>
+                <h2 class="title pb-2">To use the Activity Manager, you will need your activity id.</h2>
         </div>
         <section class="main-content text-center pb-5">
             <main class="w-100 float-start padding-xs mx-auto form-container">
-                <form method="POST" class="profile manager-form" id="profile manager">
-                    <label for="id" class="mt-3">Id</label><br>
-                    <input type="text" name="id" id="id" placeholder="Enter your id...">
+                <form method="POST" class="activity manager-form" id="activity manager">
+                    <label for="id" class="mt-3">Enter Activity id of the actvity you want to edit</label><br>  <!-- this needs to stay constant. User will have to remember their Activity Id.-->
+                    <input type="text" name="activity_id" id="a_id" placeholder="id">
                     <br>
-                    <label for="username" class="mt-3">Username</label><br>
-                    <input type="text" name="username" id="username" placeholder="Edit your username...">
+                    <label for="activity name" class="mt-3">Enter activity name</label><br>
+                    <input type="text" name="name" id="name" placeholder=" name ">
                     <br>
-                    <label for="password" class="mt-3">Password</label><br>
-                    <input type="text" name="password" id="password" placeholder="Edit your password...">
+                    <label for="activity type" class="mt-3">Enter activity type</label><br>
+                    <input type="text" name="type" id="type" placeholder=" type ">
+                    <br>
+                    <label for="activity location" class="mt-3">Enter activity location</label><br>
+                    <input type="text" name="location" id="location" placeholder="location">
+                    <br>
+                    <label for="created date" class="mt-3">Enter today's date</label><br>
+                    <input type="text" name="created_date" id="created_date" placeholder="(xx/xx/xxxx)">
+                    <br>
+                    <label for="activity date" class="mt-3">Enter activity start date</label><br>
+                    <input type="text" name="activity_date" id="activity_date" placeholder="(xx/xx/xxxx)">
                     <br>
                     <div class="mt-3 text-center">
                         <input type="submit" value="Finish" class="btn btn-primary">
@@ -39,6 +49,6 @@
             <h6>Back to homepage? <a href="../homepage.html">return to homepage</a>!</h6>
         </footer>
     </div>
-    <script src="../js/ProfileManager.js"></script>
+    <script src="../js/ActivityManager.js"></script>
 </body>
 </html>

@@ -1,15 +1,20 @@
 // In AJAX, you send a request using the XMLHttpRequest object,
 // which is built into JS
-const form = document.getElementById("profile manager");
+const form = document.getElementById("activity manager");
 console.log(form);
 form.addEventListener('submit', (event) => {
   // stop form submission
   event.preventDefault();
   //check values in form
   //console.log(form.elements);
-  let u_id = form.elements[0].value;
-  let username = form.elements[1].value;
-  let pword = form.elements[2].value;
+  let a_id = form.elements[0].value;
+  let name = form.elements[1].value;
+  let type = form.elements[2].value;
+  let location = form.elements[3].value;
+  let created_date = form.elements[4].value;
+  let activity_date = form.elements[5].value;
+  let created_by = form.elements[6].value;
+  let occupancy_max = form.elements[7].value;
   
 
   //Now we can start AJAX request
@@ -19,12 +24,18 @@ form.addEventListener('submit', (event) => {
 
   //STEP 2
   //set up template JS object for JSON parsing
-  let tempUser = {
-    userId: u_id,
-    username: username,
-    password: pword,
+  let tempActivity = {
+    ActivityId: a_id,
+    ActivityName: name,
+    ActivityType: type,
+    ActivityLocation: location,
+    CreatedDate: created_date,
+    ActivityDate: activity_date,
+    UserIdThatCreated: created_by,
+    Occupancy: occupancy_max
+    
   };
-  console.log(tempUser);
+  console.log(tempActivity);
 
   
     xhr.onreadystatechange = function() {
@@ -60,11 +71,11 @@ form.addEventListener('submit', (event) => {
 
 
   //open the request
-  xhr.open("POST", 'http://localhost:9001/api/user/editUser', true); //needs edited. 
+  xhr.open("POST", 'http://localhost:9001/api/user/editUser', true);//needs edited. 
 
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
   console.log(xhr);
   
-  xhr.send(JSON.stringify(tempUser));
+  xhr.send(JSON.stringify(tempActivity));
 });
