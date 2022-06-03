@@ -5,7 +5,7 @@ form.addEventListener('submit', (event) => {
   event.preventDefault();
  
   
-  let username = form.elements[0].value;
+  let userId = form.elements[0].value;
   
 
  
@@ -13,7 +13,7 @@ form.addEventListener('submit', (event) => {
 
  
   let tempUser = {
-    username: username
+    userId: userId
   };
   console.log(tempUser);
 
@@ -65,15 +65,15 @@ form.addEventListener('submit', (event) => {
 
 
 
-async function getActivityByUsername(){
-    console.log("retrieving Activities by username...");
-    let uname = JSON.parse(sessionStorage.getItem('username'));
+async function getActivityByUserId(){
+    console.log("retrieving Activities by userId...");
+    let uname = JSON.parse(sessionStorage.getItem('created_by'));
     console.log(uname);
     
     //do fetch request here
     try {
         const raw_response = await fetch(
-          `http://localhost:9001/api/user/username-lookup?username=${uname}`,
+          `http://localhost:5432/api/activities/userId-lookup?userId=${created_by}`,
           {
               headers: {
                   "Authorization": `Bearer ${currentUser.jwttoken}`
@@ -91,11 +91,13 @@ async function getActivityByUsername(){
         console.log(json_data);
 
         let ActivityTemplate = {
-            username: json_data.created_by,
+            
             activityname: json_data.name,
             activitytype: json_data.type,
             activitylocation: json_data.location,
-            activitydate: json_data.created_date,
+            createddate: json_data.created_date,
+            activitydate: json_data.activity_date,
+            userId: json_data.created_by,
             activityoccupancy: json_data.occupancy_max
             
         };
