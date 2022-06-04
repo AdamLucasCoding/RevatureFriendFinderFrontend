@@ -17,30 +17,77 @@
     <div>
         <div class="title-bar container-fluid text-white text-center bg-dark">
             <h1 class="title pb-2">Find An Activity </h1>
-        </div>
-        <!-- Control buttons  -->
-        <div id="myBtnContainer">
-             <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-             <button class="btn" onclick="filterSelection('location')"> location</button>
-             <button class="btn" onclick="filterSelection('activity_date')"> Activity Date</button>
-             <button class="btn" onclick="filterSelection('name')"> Activity Name</button>
-            <button class="btn" onclick="filterSelection('created_by')"> UserId</button>
-        </div>
-  
-         <!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
-        <div class="container">
-        <div class="filterDiv location">location</div>
-        <div class="filterDiv  name">soccer</div>
-        <div class="filterDiv  name">basketball</div>
-        <div class="filterDiv  name">tennis</div>
-        <div class="filterDiv  name">cooking</div>
-        
-  </div>
+        </div>  
+
+                <body>
+                
+                <p><strong>Click the headers to sort the table.</strong></p>
+                <p>The first time you click, the sorting direction is ascending (A to Z).</p>
+                <p>Click again, and the sorting direction will be descending (Z to A):</p>
+                
+                <table id="myTable">
+                  <tr>
+                   <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->  
+                    <th>Activity Id</th>
+                    <th onclick="sortTable(0)">Activity</th>
+                    <th onclick="sortTable(1)">Type</th>
+                    <th onclick="sortTable(2)">location</th>
+                    <th>Activity creation date</th>
+                    <th>Activity start date</th>
+                    <td>Creator's Id</td>
+                    <th>Occupancy</th>
+
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>soccer</td>
+                    <td>sports</td>
+                    <td>arkansas</td>
+                    <td>10/10/2021</td>
+                    <td>10/10/2022</td>
+                    <td>1</td>
+                    <td>3</td>
+                  </tr>
+
+                  <tr>
+                    <td>2</td>
+                    <td>basketball</td>
+                    <td>sports</td>
+                    <td>ohio</td>
+                    <td>10/10/2021</td>
+                    <td>10/10/2022</td>
+                    <td>1</td>
+                    <td>5</td>
+                  </tr>
+
+                  <tr>
+                    <td>3</td>
+                    <td>FPS tourney</td>
+                    <td>video games</td>
+                    <td>ohio</td>
+                    <td>10/10/2021</td>
+                    <td>10/10/2022</td>
+                    <td>2</td>
+                    <td>5</td>
+                  </tr>
+
+                  <tr>
+                    <td>4</td>
+                    <td>spa day/shopping</td>
+                    <td>shopping</td>
+                    <td>colorado</td>
+                    <td>10/10/2021</td>
+                    <td>10/10/2022</td>
+                    <td>3</td>
+                    <td>3</td>
+                  </tr>
+                
+                </table>
         <footer class="w-100 float-none fixed-bottom text-center">
-            <h6>Go back? <a href="../ActivityFinder.html">previous page</a>!</h6>
+            <h6>Go back? <a href="../homepage.html">previous page</a>!</h6>
         </footer>
     </div>
-    <script src="../js/ActivityUser.js"></script>
+    <script src="../js/ActivityFinder.js"></script>
 </body>
 </html>
 
