@@ -65,7 +65,7 @@ form.addEventListener('submit', (event) => {
 
 
   //open the request
-  xhr.open("POST", 'http://localhost:9001/api/user/register', true); //this needs edited to work right - jose
+  xhr.open("POST", 'http://localhost:5432/api/activity/create', true); 
 
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
