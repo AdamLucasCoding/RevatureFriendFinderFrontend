@@ -1,16 +1,3 @@
-/**
- * @file Trying to replace https://joequery.github.io/Stupid-Table-Plugin/ on jQuery-less website
- * @copyleft Oleksa Vyshnivsky <dying.escape@gmail.com> 2022
- * @license ISC
- * */
-
-/**
- * No defence against any table structure complications or very large tables
- *	
- * 	dir: asc | desc
- *	datatype: string | int | float | date
- *
- * */
 
 Node.prototype.tsortable = function() {
 	var ths = this.querySelectorAll('thead tr:last-child th[data-sort]')

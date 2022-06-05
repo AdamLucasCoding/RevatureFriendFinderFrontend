@@ -36,7 +36,7 @@
 
 <body class="container">
 	<h1>ActivityFinder</h1>
-	<table class="table table-sm table-striped table-sortable" style="table-layout: fixed;">
+	<table class="table table-sm table-striped table-sortable"  style="table-layout: fixed;">
 		<thead>
 			<tr>
                 <th data-sort="int">Id</th>
@@ -49,67 +49,47 @@
                 <th data-sort="int">Occupancy</th>
 			</tr>
 		</thead>
-		<tbody>
-			<tr>
-				<td>1</td>
-				<td>Soccer</td>
-				<td>Sports</td>
-				<td>Ohio</td>
-				<td>2021-06-22</td>
-                <td>2022-07-22</td>
-                <td>3</td>
-                <td>3</td>
-			</tr>
-			<tr>
-				<td>2</td>
-				<td>Spa day</td>
-				<td>Shopping</td>
-				<td>California</td>
-				<td>2022-05-22</td>
-                <td>2022-05-25</td>
-                <td>3</td>
-                <td>4</td>
-			</tr>
-			<tr>
-				<td>3</td>
-				<td>Basketball</td>
-				<td>Sports</td>
-				<td>Ohio</td>
-				<td>2022-05-11</td>
-                <td>2022-07-22</td>
-                <td>1</td>
-                <td>5</td>
-			</tr>
-			<tr>
-				<td>4</td>
-				<td>Call of duty tourney</td>
-				<td>video games</td>
-				<td>Texas</td>
-				<td>2021-06-22</td>
-                <td>2022-09-22</td>
-                <td>4</td>
-                <td>5</td>
-			</tr>
-			<tr>
-				<td>5</td>
-				<td>brunch</td>
-				<td>Shopping</td>
-				<td>Colorado</td>
-				<td>2022-01-22</td>
-                <td>2022-07-03</td>
-                <td>2</td>
-                <td>2</td>
-			</tr>
+		<tbody id="Activity_Table">
+			
 		</tbody>
 	</table>
-
+    
         <footer class="w-100 float-none fixed-bottom text-center">
             <h6>Go back? <a href="../homepage.html">previous page</a>!</h6>
         </footer>
     </div>
+    <script src="../js/ActivityFinder.js"></script>
     <script src="../js/tablesort.min.js"></script> 
     <script>document.querySelector('.table-sortable').tsortable()</script>
-<!-- <script>document.querySelectorAll('.table-sortable').forEach(el => el.tsortable())</script> -->
+
+<script>
+    function getActivities() {
+      let xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if ((this.readyState) == 4 && this.status == 200) {
+          let data = JSON.parse(xhr.responseText);
+          console.log(data);
+          renderHTML(data);
+        }
+      };
+      xhr.setRequestHeader
+      // Step 3: Open the request
+      xhr.open("GET", `jdbc:postgresql://friendfinder.cgzkknxdmslv.us-east-2.rds.amazonaws.com:5432/friendfinder`, true);
+      xhr.setRequestHeader("Access-Control-Allow-Headers", "x-requested-with ");
+      xhr.setRequestHeader('Access-Control-Allow-Origin','*');
+      // STEP 4: send the request
+      xhr.send();
+    }
+    function renderHTML(data) {
+      // target the p tag that will hold the reponse data
+      let resp = document.getElementById("input");
+      // append all response data to webpage
+      resp.append("Name: " + data.name);
+      window.onload = function() {
+        getActivities();
+      }
+    }
+  </script>
 </body>
 </html>
 
