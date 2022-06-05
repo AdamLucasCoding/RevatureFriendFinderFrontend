@@ -17,7 +17,7 @@ form.addEventListener("submit", async (event) => {
   //do http request and send to server
   try {
     const raw_response = await fetch(
-      `http://localhost:5432/api/user/authenticate`,
+      `http://localhost:8080/api/user/authenticate`,
       {
         method: "POST",
         headers: {
