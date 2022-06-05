@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="sha256-hHKA3d/HttC8OW3Sl093W8DoZudhHJDj++kZYo6MLzA=" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 
@@ -20,95 +21,95 @@
         </div>  
 
         <style>
-            table {
-              border-spacing: 0;
-              width: 100%;
-              border: 1px solid #ddd;
+            [data-sort]:hover {
+                cursor: pointer;
             }
             
-            th {
-              cursor: pointer;
+            [data-dir="asc"]:after {
+                content: ' ↗';
             }
             
-            th, td {
-              text-align: left;
-              padding: 16px;
+            [data-dir="desc"]:after {
+                content: ' ↘';
             }
-            
-            tr:nth-child(even) {
-              background-color: #f2f2f2
-            }
-            </style>
+                </style>
 
-                <body>
-                
-                <p><strong>Click the headers to sort the table.</strong></p>
-                <p>The first time you click, the sorting direction is ascending (A to Z).</p>
-                <p>Click again, and the sorting direction will be descending (Z to A):</p>
-                
-                <table id="myTable">
-                  <tr>
-                   <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->  
-                    <th>Activity Id</th>
-                    <th onclick="sortTable(0)">Activity</th>
-                    <th onclick="sortTable(1)">Type</th>
-                    <th onclick="sortTable(2)">location</th>
-                    <th>Activity creation date</th>
-                    <th>Activity start date</th>
-                    <td>Creator's Id</td>
-                    <th>Occupancy</th>
+<body class="container">
+	<h1>ActivityFinder</h1>
+	<table class="table table-sm table-striped table-sortable" style="table-layout: fixed;">
+		<thead>
+			<tr>
+                <th data-sort="int">Id</th>
+				<th data-sort="string">Name</th>
+                <th data-sort="string">Type</th>
+				<th data-sort="string">location</th>
+				<th data-sort="date">Date Created</th>
+				<th data-sort="date">Activity Date</th>
+                <th data-sort="int">Created by</th>
+                <th data-sort="int">Occupancy</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>Soccer</td>
+				<td>Sports</td>
+				<td>Ohio</td>
+				<td>2021-06-22</td>
+                <td>2022-07-22</td>
+                <td>3</td>
+                <td>3</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>Spa day</td>
+				<td>Shopping</td>
+				<td>California</td>
+				<td>2022-05-22</td>
+                <td>2022-05-25</td>
+                <td>3</td>
+                <td>4</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>Basketball</td>
+				<td>Sports</td>
+				<td>Ohio</td>
+				<td>2022-05-11</td>
+                <td>2022-07-22</td>
+                <td>1</td>
+                <td>5</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>Call of duty tourney</td>
+				<td>video games</td>
+				<td>Texas</td>
+				<td>2021-06-22</td>
+                <td>2022-09-22</td>
+                <td>4</td>
+                <td>5</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>brunch</td>
+				<td>Shopping</td>
+				<td>Colorado</td>
+				<td>2022-01-22</td>
+                <td>2022-07-03</td>
+                <td>2</td>
+                <td>2</td>
+			</tr>
+		</tbody>
+	</table>
 
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>soccer</td>
-                    <td>sports</td>
-                    <td>arkansas</td>
-                    <td>10/10/2021</td>
-                    <td>10/10/2022</td>
-                    <td>1</td>
-                    <td>3</td>
-                  </tr>
-
-                  <tr>
-                    <td>2</td>
-                    <td>basketball</td>
-                    <td>sports</td>
-                    <td>ohio</td>
-                    <td>10/10/2021</td>
-                    <td>10/10/2022</td>
-                    <td>1</td>
-                    <td>5</td>
-                  </tr>
-
-                  <tr>
-                    <td>3</td>
-                    <td>FPS tourney</td>
-                    <td>video games</td>
-                    <td>ohio</td>
-                    <td>10/10/2021</td>
-                    <td>10/10/2022</td>
-                    <td>2</td>
-                    <td>5</td>
-                  </tr>
-
-                  <tr>
-                    <td>4</td>
-                    <td>spa day/shopping</td>
-                    <td>shopping</td>
-                    <td>colorado</td>
-                    <td>10/10/2021</td>
-                    <td>10/10/2022</td>
-                    <td>3</td>
-                    <td>3</td>
-                  </tr>
-                
-                </table>
         <footer class="w-100 float-none fixed-bottom text-center">
             <h6>Go back? <a href="../homepage.html">previous page</a>!</h6>
         </footer>
     </div>
-    <script src="../js/ActivityFinder.js"></script>
+    <script src="../js/tablesort.min.js"></script> 
+    <script>document.querySelector('.table-sortable').tsortable()</script>
+<!-- <script>document.querySelectorAll('.table-sortable').forEach(el => el.tsortable())</script> -->
 </body>
 </html>
 
