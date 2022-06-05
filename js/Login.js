@@ -1,23 +1,23 @@
-const form = document.getElementById("login-form");
+const form = document.getElementById("login");
 
 form.addEventListener("submit", async (event) => {
   
   event.preventDefault();
 
   
-  let uname = form.elements[0].value;
-  let pw = form.elements[1].value;
+  let Username = form.elements[0].value;
+  let Pword = form.elements[1].value;
 
   let loginTemplate = {
-    username: uname,
-    password: pw,
+    username: Username,
+    password: Pword,
   };
   console.log(`HttpRequest body: ` + JSON.stringify(loginTemplate));
 
   //do http request and send to server
   try {
     const raw_response = await fetch(
-      `http://localhost:9001/api/user/login`,
+      `http://localhost:5432/api/user/authenticate`,
       {
         method: "POST",
         headers: {
