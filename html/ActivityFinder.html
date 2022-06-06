@@ -36,7 +36,7 @@
 
 <body class="container">
 	<h1>ActivityFinder</h1>
-	<table class="table table-sm table-striped table-sortable"  style="table-layout: fixed;">
+	<table class="table table-sm table-striped table-sortable" id="Activity_Table" style="table-layout: fixed;">
 		<thead>
 			<tr>
                 <th data-sort="int">Id</th>
@@ -49,16 +49,166 @@
                 <th data-sort="int">Occupancy</th>
 			</tr>
 		</thead>
-		<tbody id="Activity_Table">
-			
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>2 v 2 Basketball</td>
+				<td>Sports</td>
+				<td>community gym</td>
+				<td>2022-10-10/td>
+                <td>2022-10-10</td>
+                <td>1</td>
+                <td>5</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>Indoor Soccer</td>
+				<td>Sports</td>
+				<td>Community Gym</td>
+				<td>2022-10-10</td>
+                <td>2022-10-10</td>
+                <td>2</td>
+                <td>5</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>Chess</td>
+				<td>Board games</td>
+				<td>Community Center</td>
+				<td>2022-10-10</td>
+                <td>2022-10-10</td>
+                <td>3</td>
+                <td>5</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>Fishing</td>
+				<td>Sports</td>
+				<td>Irragation Canal</td>
+				<td>2022-10-10</td>
+                <td>2022-10-10</td>
+                <td>1</td>
+                <td>5</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>Cooking/Thai</td>
+				<td>Food</td>
+				<td>Community Center Kitchen</td>
+				<td>2022-10-10</td>
+                <td>2022-10-10</td>
+                <td>2</td>
+                <td>5</td>
+			</tr>
+            <tr>
+				<td>6</td>
+				<td>Video Games1</td>
+				<td>Videogames</td>
+				<td>Online</td>
+				<td>2022-10-10</td>
+                <td>2022-10-10</td>
+                <td>3</td>
+                <td>5</td>
+			</tr>
+            <tr>
+				<td>7</td>
+				<td>Video Games2</td>
+				<td>Videogames</td>
+				<td>Online</td>
+				<td>2022-10-10</td>
+                <td>2022-10-10</td>
+                <td>1</td>
+                <td>5</td>
+			</tr>
+            <tr>
+				<td>8</td>
+				<td>Xbox Live</td>
+				<td>Videogames</td>
+				<td>Online</td>
+				<td>2022-10-10</td>
+                <td>2022-10-10</td>
+                <td>2</td>
+                <td>5</td>
+			</tr>
+            <tr>
+				<td>9</td>
+				<td>Playstation</td>
+				<td>Videogames</td>
+				<td>Online</td>
+				<td>2022-10-10</td>
+                <td>2022-10-10</td>
+                <td>3</td>
+                <td>5</td>
+			</tr>
+            <tr>
+				<td>10</td>
+				<td>Cars and Coffee</td>
+				<td>Automotive</td>
+				<td>Walmart Parking Lot</td>
+				<td>2022-10-10</td>
+                <td>2022-10-10</td>
+                <td>1</td>
+                <td>5</td>
+			</tr>
+            <!--
+            <tr>
+				<td>11</td>
+				<td>Ping Pong</td>
+				<td>Sports</td>
+				<td>community gym</td>
+				<td>2022-10-10</td>
+                <td>2022-10-10</td>
+                <td>2</td>
+                <td>5</td>
+			</tr>
+            <tr>
+				<td>12</td>
+				<td>Temmos</td>
+				<td>Sports</td>
+				<td>community gym</td>
+				<td>2022-10-10</td>
+                <td>2022-10-10</td>
+                <td>3</td>
+                <td>5</td>
+			</tr>
+            <tr>
+				<td>13</td>
+				<td>Wall Climbing</td>
+				<td>Sports</td>
+				<td>community gym</td>
+				<td>2022-10-10</td>
+                <td>2022-10-10</td>
+                <td>1</td>
+                <td>5</td>
+			</tr>
+            <tr>
+				<td>14</td>
+				<td>Baseball</td>
+				<td>Sports</td>
+				<td>community gym</td>
+				<td>2022-10-10</td>
+                <td>2022-10-10</td>
+                <td>2</td>
+                <td>5</td>
+			</tr>
+            <tr>
+				<td>15</td>
+				<td>brunch</td>
+				<td>Shopping</td>
+				<td>Colorado</td>
+				<td>2022-10-10</td>
+                <td>2022-10-10</td>
+                <td>3</td>
+                <td>5</td>
+			</tr>-->
+
 		</tbody>
 	</table>
-    
+
         <footer class="w-100 float-none fixed-bottom text-center">
             <h6>Go back? <a href="../homepage.html">previous page</a>!</h6>
         </footer>
     </div>
-    <script src="../js/ActivityFinder.js"></script>
     <script src="../js/tablesort.min.js"></script> 
     <script>document.querySelector('.table-sortable').tsortable()</script>
 

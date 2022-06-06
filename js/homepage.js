@@ -155,7 +155,7 @@ async function getRandomActivity(event) {
     console.log(json_data);
 
     //now I need to get the user by username
-    const user = await getuserByUsername();
+    const user = await getUserByUsername();
 
     //add Activity to api and attach user to this activity
     console.log(json_data.types[0].type.name, json_data.types[0].type.name !== undefined);
