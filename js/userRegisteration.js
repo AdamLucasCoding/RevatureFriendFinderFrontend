@@ -5,17 +5,17 @@ form.addEventListener('submit', (event) => {
   
   event.preventDefault();
  
-  let id = form.elements[0].value;
-  let username = form.elements[1].value;
-  let pw = form.elements[2].value;
-  let email = form.elements[3].value;
+  
+  let username = form.elements[0].value;
+  let pword = form.elements[1].value;
+  let email = form.elements[2].value;
 
  
   let xhr = new XMLHttpRequest();
 
  
   let tempUser = {
-    userId: u_id,
+    
     username: username,
     password: pword,
     email: email
